@@ -159,10 +159,17 @@ router.patch('/bookings/:id', requireRole(['admin', 'editor']), async (req, res,
   }
 });
 
+async function getOrCreateSettings() {
+  const existing = await Settings.findOne({ singletonKey: 'default' }).lean();
+  if (existing) return existing;
+  const created = await Settings.create({ singletonKey: 'default' });
+  return created.toObject();
+}
+
 router.get('/settings', requireRole(['admin', 'editor', 'viewer']), async (req, res, next) => {
   try {
-    const s = await Settings.findOne({ singletonKey: 'default' }).lean();
-    res.json({ settings: s || null });
+    const s = await getOrCreateSettings();
+    res.json({ settings: s });
   } catch (e) {
     next(e);
   }
