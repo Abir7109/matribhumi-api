@@ -47,6 +47,11 @@ Admin
    - `npm run seed:admin`
 3. Login from admin dashboard and keep the JWT token.
 
+## Currency migration (SAR -> BDT)
+If your DB already contains packages with `price.currency: "SAR"`, run:
+- `npm run migrate:currency`
+This updates existing package documents (does not change amounts).
+
 ## Deployment (recommended)
 - API: Render
   - Build command: `npm install`

@@ -13,7 +13,8 @@
     "lint": "node -c src/server.js",
     "seed": "node src/scripts/seed.js",
     "seed:demo": "node src/scripts/seed-demo.js",
-    "seed:admin": "node src/scripts/seed-admin.js"
+    "seed:admin": "node src/scripts/seed-admin.js",
+    "migrate:currency": "node src/scripts/migrate-currency.js"
   },
   "dependencies": {
     "argon2": "^0.43.0",
