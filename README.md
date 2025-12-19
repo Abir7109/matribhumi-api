@@ -54,3 +54,6 @@ Admin
   - Env vars: from `.env.example` (do not commit real secrets)
 - Set CORS origins to your deployed domains:
   - `https://<your-user-site>.vercel.app,https://<your-admin-site>.vercel.app`
+
+## Credits
+Created by Rahikul Makhtum Abir (rahikulmakhtum147@gmail.com)
